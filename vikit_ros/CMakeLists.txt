@@ -16,8 +16,14 @@ ENDIF()
 # Add catkin and required ROS packages
 FIND_PACKAGE(catkin REQUIRED COMPONENTS roscpp vikit_common visualization_msgs tf cmake_modules)
 
+set(OpenCV_DIR /usr/lib/x86_64-linux-gnu/cmake/opencv4/)
+find_package(OpenCV REQUIRED)
+message("OpenCV_DIR: ${OpenCV_DIR}")
+message("OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
+message("OpenCV version: ${OpenCV_VERSION}")
+
 # Add plain cmake packages 
-FIND_PACKAGE(OpenCV REQUIRED)
+# FIND_PACKAGE(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
 FIND_PACKAGE(Sophus REQUIRED)
 

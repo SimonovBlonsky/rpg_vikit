@@ -28,7 +28,12 @@ ENDIF()
 SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -fsee -fomit-frame-pointer -fno-signed-zeros -fno-math-errno -funroll-loops")
 
 # Add plain cmake packages 
-FIND_PACKAGE(OpenCV REQUIRED)
+# FIND_PACKAGE(OpenCV REQUIRED)
+set(OpenCV_DIR /usr/lib/x86_64-linux-gnu/cmake/opencv4/)
+find_package(OpenCV 4.2 EXACT REQUIRED)
+message("OpenCV_DIR: ${OpenCV_DIR}")
+message("OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
+message("OpenCV version: ${OpenCV_VERSION}")
 FIND_PACKAGE(Eigen REQUIRED)
 FIND_PACKAGE(Sophus REQUIRED)
 
